@@ -13,6 +13,11 @@ class Task extends Model {
 
     static associate(models){
         this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
+        this.belongsToMany(models.Tag, { 
+            foreignKey: 'task_id', 
+            through: 'task_tags',
+            as: 'tags' 
+        });
     }
 
 }

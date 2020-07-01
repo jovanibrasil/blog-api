@@ -1,4 +1,4 @@
  npx sequelize db:create
  npx sequelize migration:create --name=create-users
- npx sequelize migration:create --name=create-users
+ npx sequelize db:migrate
  npx sequelize migration:undo // util quando é possível desfazer - não serve para produção

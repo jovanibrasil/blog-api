@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('users', { 
+    await queryInterface.createTable('tags', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -10,14 +10,6 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: false,
-        validate: {
-            notEmpty: true
-        }
-      },
-      email: {
-        type: Sequelize.STRING,
-        unique: true,
         allowNull: false,
         validate: {
             notEmpty: true
@@ -35,6 +27,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('users');
+    await queryInterface.dropTable('tags');
   }
 };
