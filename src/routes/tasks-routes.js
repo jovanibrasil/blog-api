@@ -1,9 +1,11 @@
 const TaskController = require('../controllers/TaskController');
+const auth = require('../configs/security/sec')();
 
 module.exports = app => {
     
-    app.get('/users/:user_id/tasks', TaskController.index);
-
-    app.post('/users/:user_id/tasks', TaskController.store);
+    app.route('/users/:user_id/tasks')
+        .all(auth.authenticate())
+        .get(TaskController.index)
+        .post(TaskController.store);
 
 };
