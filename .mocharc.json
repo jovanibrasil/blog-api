@@ -1,0 +1,6 @@
+{
+    "require": ["test/helper"],
+    "reporter": "spec",
+    "slow": 5000
+}
+
