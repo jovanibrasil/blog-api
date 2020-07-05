@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run apidoc && nodemon index.js",
     "test": "NODE_ENV=test mocha test/**/*.js --exit",
-    "start": "nodemon index.js"
+    "apidoc": "apidoc -i src/routes/ -o public/apidoc"
   },
-  "author": "",
+  "author": "Jovani Brasil",
+  "apidoc": {
+    "name": "API documentation"
+  },
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -19,6 +23,7 @@
     "sequelize": "^6.2.3"
   },
   "devDependencies": {
+    "apidoc": "^0.23.0",
     "babel": "^6.23.0",
     "chai": "^4.2.0",
     "mocha": "^8.0.1",
