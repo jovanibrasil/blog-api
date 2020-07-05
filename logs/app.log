@@ -1,5 +1,0 @@
-{"message":"::1 - - [05/Jul/2020:16:18:17 +0000] \"POST /token HTTP/1.1\" 401 12\n","level":"info"}
-{"message":"[Sun Jul 05 2020 13:20:15 GMT-0300 (Brasilia Standard Time)] Executing (default): INSERT INTO \"users\" (\"id\",\"name\",\"email\",\"age\",\"password\",\"created_at\",\"updated_at\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"name\",\"email\",\"age\",\"password\",\"created_at\",\"updated_at\";","level":"info"}
-{"message":"::1 - - [05/Jul/2020:16:20:15 +0000] \"POST /users HTTP/1.1\" 200 214\n","level":"info"}
-{"message":"[Sun Jul 05 2020 13:20:20 GMT-0300 (Brasilia Standard Time)] Executing (default): SELECT \"id\", \"name\", \"email\", \"age\", \"password\", \"created_at\" AS \"createdAt\", \"updated_at\" AS \"updatedAt\" FROM \"users\" AS \"User\" WHERE \"User\".\"email\" = 'jovani@email.com' LIMIT 1;","level":"info"}
-{"message":"::1 - - [05/Jul/2020:16:20:21 +0000] \"POST /token HTTP/1.1\" 200 107\n","level":"info"}

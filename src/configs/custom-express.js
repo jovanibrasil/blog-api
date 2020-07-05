@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
+const helmet = require('helmet');
+const compression = require('compression');
+
 const morgan = require('morgan');
 const logger = require('./logger')
 
@@ -13,6 +16,9 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }))
+
+app.use(helmet());
+app.use(compression())
 
 app.use(morgan('common', {
     stream: {
