@@ -1,30 +1,30 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('task_tags', {
+    await queryInterface.createTable("post_tags", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
       },
-      task_id: {
+      post_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'tasks',
-          key: 'id',
+          model: "posts",
+          key: "id"
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE"
       },
       tag_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'tags',
-          key: 'id',
+          model: "tags",
+          key: "id"
         },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE"
       },
       created_at: {
         type: Sequelize.DATE,
@@ -38,6 +38,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('task_tags');
+    await queryInterface.dropTable("post_tags");
   }
 };

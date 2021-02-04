@@ -6,7 +6,9 @@
   "scripts": {
     "start": "npm run apidoc && nodemon index.js",
     "test": "NODE_ENV=test mocha test/**/*.js --exit",
-    "apidoc": "apidoc -i src/routes/ -o public/apidoc"
+    "apidoc": "apidoc -i src/routes/ -o public/apidoc",
+    "dev-env-up": "docker-compose up -d --build",
+    "dev-env-down": "docker-compose down"
   },
   "author": "Jovani Brasil",
   "apidoc": {

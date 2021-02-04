@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     // Altering commands.
-    await queryInterface.createTable('tasks', { 
+    await queryInterface.createTable("posts", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -13,14 +13,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
         validate: {
-            notEmpty: true
+          notEmpty: true
         }
       },
-      done: {
-        type: Sequelize.BOOLEAN,
+      content: {
+        type: Sequelize.STRING,
         allowNull: false,
         validate: {
-            notEmpty: true
+          notEmpty: true
         }
       },
       created_at: {
@@ -36,6 +36,6 @@ module.exports = {
 
   down: async (queryInterface, Sequelize) => {
     //Add reverting commands here.
-    await queryInterface.dropTable('tasks');
+    await queryInterface.dropTable("posts");
   }
 };

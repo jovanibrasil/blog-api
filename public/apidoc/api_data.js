@@ -67,9 +67,9 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/tasks",
+    "url": "/posts",
     "title": "",
-    "group": "Tasks",
+    "group": "posts",
     "header": {
       "fields": {
         "Header": [
@@ -102,22 +102,22 @@ define({ "api": [
             "group": "Success 200",
             "type": "Object[]",
             "optional": false,
-            "field": "tasks",
+            "field": "posts",
             "description": "<p>Task list</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
-            "field": "tasks.id",
+            "field": "posts.id",
             "description": "<p>Task identification</p>"
           }
         ]
       }
     },
     "version": "0.0.0",
-    "filename": "src/routes/tasks-routes.js",
-    "groupTitle": "Tasks",
-    "name": "GetTasks"
+    "filename": "src/routes/posts-routes.js",
+    "groupTitle": "posts",
+    "name": "GetPosts"
   }
 ] });

@@ -1,23 +1,24 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require("sequelize");
 
 class Tag extends Model {
+  static init(sequelize) {
+    super.init(
+      {
+        name: DataTypes.STRING
+      },
+      {
+        sequelize
+      }
+    );
+  }
 
-    static init(sequelize) {
-        super.init({
-            name: DataTypes.STRING,        
-        }, {
-            sequelize
-        });
-    }  
-
-    static associate(models){
-        this.belongsToMany(models.Task, { 
-            foreignKey: 'tag_id', 
-            through: 'task_tags',
-            as: 'tasks' 
-        });
-    }
-
+  static associate(models) {
+    this.belongsToMany(models.Post, {
+      foreignKey: "tag_id",
+      through: "post_tags",
+      as: "posts"
+    });
+  }
 }
 
 module.exports = Tag;
